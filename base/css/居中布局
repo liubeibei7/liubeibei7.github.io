@@ -1,0 +1,72 @@
+一、水平居中
+<div class="parent">
+ <div class="child">demo</div>
+</div>
+1、
+.parent{text-align:center}
+.child{display:inline-block}
+text-align针对inline居中，会继承
+2、
+.parent{text-align:center}
+.child{display:table;margin:0 auto;}
+table宽度随内容
+3、
+.parent{position:relative;}
+.child{
+ position:absolute;
+ left:50%;
+ transform:translateX(-50%);
+}
+left针对父元素
+transform针对自身
+4、
+.parent{
+ display:flex;
+ justify-content:center;
+ }
+5、
+.parent{display:flex;}
+.child{margin:0 auto;}
+
+二、垂直居中
+1、
+.parent{
+ display:table-cell;
+ vertical-align:middle;
+}
+2、
+.parent{position:relative;}
+.child{
+ position:absolute;
+ top:50%;
+ transform:translateY(-50%);
+}
+3、
+.parent{
+ display:flex;
+ align-items:center;
+ }
+ 
+ 三、居中
+ 1、
+.parent{
+ text-align:center;
+ display:table-cell;
+ vertical-align:middle;
+}
+.child{display:inline-block}
+ 2、
+.parent{position:relative;}
+.child{
+ position:absolute;
+ left:50%;
+ top:50%;
+ transform:translate(-50%,-50%);
+}
+3、
+.parent{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ }
+ 
